@@ -30,4 +30,4 @@ df_temps.show(1)
 # +-----------+----------+---------+--------+
 
 # Clean up by deleting the table from the cluster.
-spark.sql('DROP TABLE demo_dbx_table')
+#spark.sql('DROP TABLE demo_dbx_table')
