@@ -1,0 +1,29 @@
+# http://yaml.org/spec/1.2/spec.html
+# https://learnxinyminutes.com/docs/yaml/
+
+custom:
+  basic-cluster-props: &basic-cluster-props
+    spark_version: "10.4.x-cpu-ml-scala2.12"
+    node_type_id: "i3.xlarge"
+
+  basic-static-cluster: &basic-static-cluster
+    new_cluster:
+      <<: *basic-cluster-props
+      num_workers: 2
+
+environments:
+  default:
+    jobs:
+      - name: "job-dbx-demo-cicd"
+        tasks:
+          - task_key: "first-task"
+            <<: *basic-static-cluster
+            spark_python_task:
+              python_file: "file://dbx_demo_cicd/tasks/dbx_demo_cicd_task1.py"
+          - task_key: "second-task"
+            <<: *basic-static-cluster
+            spark_python_task:
+              python_file: "file://dbx_demo_cicd/tasks/dbx_demo_cicd_task2.py"
+            depends_on:
+              - task_key: "second-task"
+           

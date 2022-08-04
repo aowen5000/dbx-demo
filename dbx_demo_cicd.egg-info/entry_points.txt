@@ -1,0 +1,3 @@
+[console_scripts]
+etl = dbx_demo_cicd.tasks.sample_etl_job:entrypoint
+ml = dbx_demo_cicd.tasks.sample_ml_job:entrypoint

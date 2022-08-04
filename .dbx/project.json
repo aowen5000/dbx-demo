@@ -1,0 +1,9 @@
+{
+    "environments": {
+        "default": {
+            "profile": "DEFAULT",
+            "workspace_dir": "/Shared/dbx/dbx_demo_cicd",
+            "artifact_location": "dbfs:/Users/alex.owen@databricks.com/dbx/projects/dbx_demo_cicd"
+        }
+    }
+}
